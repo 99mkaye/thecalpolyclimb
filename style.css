@@ -10,8 +10,9 @@
 
 body {
 	color: #71675b; /*(default font color for the entire page)*/
-	font-family: 'Open Sans', sans-serif;
-	font-weight: 300; /*(font thickness)*/
+	font-family: 'source-sans-pro', sans-serif;
+    font-style: normal;
+	font-weight: 400; /*(font thickness)*/
 	-webkit-font-smoothing: antialiased;/*(helps with readability)*/
 }
 
@@ -71,7 +72,7 @@ nav ul li a:visited {
     background-color: #FFFFFF;
     color: #dc875e;
     text-decoration: none;
-	font-weight: bold;
+	font-weight: 600;
 }
 nav ul li a:hover,
 nav ul li a:visited:hover {
@@ -121,7 +122,7 @@ a.text:hover, a.text:active {
     text-align: center;
     position: relative;
     display: block;
-    width: 210px;
+    width: 200px;
     letter-spacing: .3px;
     font-size: 16px;
     font-weight: 500;
@@ -180,7 +181,7 @@ a.text:hover, a.text:active {
 	padding-left: 80px;
 	float: left;
 	color: #000000;
-	font-family: sans-serif;
+	font-family: 'source-sans-pro', sans-serif;
 	font-size: small;
   }
 	
@@ -248,7 +249,7 @@ a.text:hover, a.text:active {
 .container {
 	position: relative;
     background-image: url(img/main2.jpg);
-    height: 90vh;
+    height: 900px;
     background-size: cover;
     background-position: 50% 50%;
 }
@@ -307,6 +308,8 @@ p {
 	line-height: 1.5;
 }
 
+
+
 /*----------------SLIDESHOW-----------------*/
 
 #slider {
@@ -351,7 +354,9 @@ filter: alpha(opacity=70)
 #alt-caption {
     background-color: #dcd0c0;
     color: #71675b;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'source-sans-pro', sans-serif;
+    font-style: normal;
+    font-weight: 400;
     font-size: .9em;
     margin-left: auto;
     margin-right: auto;
@@ -382,11 +387,13 @@ footer {
 footer a {
 	text-decoration: none; /*(nullifies underline)*/
 	color: #000000;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'source-sans-pro', sans-serif;
+    font-style: normal;
+	font-weight: 400;
 }
 /*(link color when moused over)*/
 footer a:hover {
-	color: #cc00b3;
+	color: #dc875e;
 }
 
 
@@ -428,6 +435,10 @@ footer a:hover {
 	background-color: #f9f6f1;
 }
 
+.rockdivider img{
+    width: 100%;
+}
+
 /*----------------back to top button-----------------*/
 #myBtn {
   
@@ -442,7 +453,9 @@ footer a:hover {
   cursor: pointer; /* Add a mouse pointer on hover */
   padding: 15px; /* Some padding */
   border-radius: 10px; /* Rounded corners */
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'source-sans-pro', sans-serif;
+    font-style: normal;
+	font-weight: 400;
   font-size: 10px; /* Increase font size */
 }
 
@@ -452,55 +465,68 @@ footer a:hover {
 }
 
 /*-----animated welcome-----*/
-html{
-			margin:0;
-			padding:0;
-			width:100%;
-		}
-		body{
-			margin:0;
-			padding:0;
-			width:100%;
-			text-align:center;
-			background-size:cover;
-            background:url(hd.jpg) no-repeat 50% 50%;
-			height: 100vh;
-		/*-----causing issues-----*	display:table; /*-----animated welcome-----*/
-		}
-		.wrapper{
-		
-			position:absolute;
-			top:52%;
-			left: 53%;
-			transform: translate(-50%, -50%);
-			width:60%;
-		}
-		
-		path{		
-			stroke:#fff;
-			fill:#fff;
-			stroke-dasharray:1800;
-			opacity:10;
-			animation:animate 10s cubic-bezier(0,.23,1,.1) infinite;
-			}
-		@keyframes animate{
-			20%{
-				opacity:10;
-				fill:none;
-				stroke-dashoffset:1800;}
-			90%{
-				fill:rgba(255,255,255,0);}
-			100%{
-			     opacity:10;
-				fill:rgba(255,255,255,1);
-				stroke-dashoffset:0;}
-		}
+
 /*----smooth scroll----*/
 html {
-  scroll-behavior: smooth
+  scroll-behavior: smooth;
 }
 
 /*----menu dissapear when scroll---*/
 .nav-up {
   top: -105px; 
 }
+
+/*-----welcome------*/
+
+@import url(https://use.typekit.net/qai4grp.css);
+
+*, html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+}
+
+svg {
+  position: absolute;
+  font: 250px chantal, sans-serif;
+  letter-spacing: ;
+  width: 100%;
+  height: 100%;
+  margin-top: 8%;
+}
+
+svg text {
+  fill: #dcd0c0;
+  stroke: #dcd0c0;
+  fill-opacity: 1;
+  stroke-width: 0;
+  stroke-dasharray: 100% 0;
+  animation: stroke-offset 4s infinite;
+
+}
+
+@keyframes stroke-offset {
+  0% {
+    fill-opacity: 0;
+    stroke-width: 0;
+    stroke-dasharray: 0% 100%;
+  }
+  25% {
+    stroke-width: 3px;
+  }
+  50% {
+    fill-opacity: 0;
+  }
+  75% {
+    stroke-width: 3px;
+  }
+  100% {
+    stroke-width: 0;
+  }
+}
+
